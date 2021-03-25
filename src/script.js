@@ -45,15 +45,11 @@ function fetchInfoJSON() {
 // This function allow us to know if the data enter for the user is correct or not
 
 function validateValues(fuelLevel, cargoMass) {
-  if (
+  return !(
     Number(fuelLevel.value) < 10000 ||
     Number(cargoMass.value) > 10000 ||
     booleanVar
-  ) {
-    return false;
-  } else {
-    return true;
-  }
+  ) 
 }
 
 
@@ -65,9 +61,7 @@ function textHasNumber(myString) {
   return /\d/.test(myString);
 }
 window.addEventListener('load', () => {
-  fetchInfoJSON();
-
-  let form = document.querySelector('form');
+  fetchInfoJSON(); 
 
   const button = document.getElementById('formSubmit');
 
@@ -161,3 +155,6 @@ window.addEventListener('load', () => {
     }   
   });
 });
+
+
+console.log(window.navigator.userLanguage);
